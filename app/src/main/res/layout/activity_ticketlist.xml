@@ -1,74 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ticketlist"
-    android:background="@drawable/tirai"
-    android:orientation="vertical"
-    >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingVertical="15dp"
-        >
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/logo"
-            ></ImageView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="What Event Next?"
-            android:textColorHint="@color/primary"
-            android:background="@drawable/search_text_field"
-            android:padding="18dp"
-            android:drawableRight="@drawable/baseline_search_24"
-            >
-
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
+<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/customticketlist"
-        android:layout_marginTop="35dp"
+        tools:context=".ticketlist"
+        android:background="@drawable/tirai"
         android:orientation="vertical"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tickets"
-            android:textSize="35dp"
-            android:textColor="#FFFFFF"
-            android:layout_marginHorizontal="35dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins_bold"></TextView>
 
-        <ListView
-            android:id="@+id/listView"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            tools:listitem="@layout/items"
-            android:layout_marginTop="20dp"
-            android:layout_marginHorizontal="35dp"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="10.0sp"/>
-    </LinearLayout>
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
 
-</LinearLayout>
+            >
+            <ImageView
+                android:id="@+id/menuBtn"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:src="@drawable/baseline_menu_24"
+                android:layout_marginLeft="35dp"
+                ></ImageView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="35dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to Jalihara"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="#44265E"
+                    android:textSize="18dp"
+                    />
+                <TextView
+                    android:id="@+id/usernameLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="#44265E"
+                    android:textSize="20dp"
+
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/logooutline"
+                />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/textSearch"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_marginTop="30dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="What Event Next?"
+                android:textColorHint="@color/primary"
+                android:background="@drawable/search_text_field"
+                android:padding="15dp"
+                android:drawableRight="@drawable/baseline_search_24"
+                >
+
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/textSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/customticketlist"
+            android:layout_marginTop="35dp"
+            android:orientation="vertical"
+            >
+            <HorizontalScrollView
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="All"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="16dp"
+                        android:layout_marginRight="20dp"
+                        ></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Music"
+                        android:textColor="#70FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginRight="20dp"
+                        android:textSize="15dp"
+                        ></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Concert"
+                        android:textColor="#70FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginRight="20dp"
+                        android:textSize="15dp"
+                        ></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Theater"
+                        android:textColor="#70FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginRight="20dp"
+                        android:textSize="15dp"
+                        ></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Comedy"
+                        android:textColor="#70FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginRight="20dp"
+                        android:textSize="15dp"
+                        ></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Perform"
+                        android:textColor="#70FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginRight="20dp"
+                        android:textSize="15dp"
+                        ></TextView>
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular Events"
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_bold"></TextView>
+
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/items"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="35dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="10.0sp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            >
+            <LinearLayout
+                android:id="@+id/homeMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menuborderbottom"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_home"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HOME"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ticketMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menuborderbottom"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_ticket"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TICKET"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/aboutusMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menuborderbottom"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_aboutus"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABOUT US"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/logoutMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C09FDE"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_logout"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOG OUT"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

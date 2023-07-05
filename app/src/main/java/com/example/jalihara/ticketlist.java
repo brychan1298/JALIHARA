@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.jalihara.databinding.ActivityHomeBinding;
 import com.example.jalihara.databinding.ActivityTicketlistBinding;
@@ -25,8 +31,9 @@ public class ticketlist extends AppCompatActivity {
         binding = ActivityTicketlistBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         Intent intent = this.getIntent();
-        String username = intent.getStringExtra("username");
 
+        TextView usernameLbl = findViewById(R.id.usernameLbl);
+        usernameLbl.setText(Global.username);
 
         int[] imageList = {R.drawable.ticket1, R.drawable.ticket2, R.drawable.ticket3, R.drawable.ticket4, R.drawable.ticket5};
         String[] nameList = {"INDO IN TECHNO", "KING OF GUITAR", "JOHN DOE", "SWIFTIES", "DRUM ROLL"};
@@ -47,7 +54,6 @@ public class ticketlist extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ticketlist.this, ticketform.class);
-                intent.putExtra("username",username);
                 intent.putExtra("eventName", nameList[i]);
                 intent.putExtra("eventDate", dateList[i]);
                 intent.putExtra("eventTime", timeList[i]);
@@ -56,6 +62,88 @@ public class ticketlist extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        int totalHeight = 0;
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(binding.listView.getWidth(), View.MeasureSpec.AT_MOST);
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, binding.listView);
+            listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = binding.listView.getLayoutParams();
+        params.height = totalHeight + (binding.listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        binding.listView.setLayoutParams(params);
+        binding.listView.requestLayout();
+
+        ImageView menuBtn = findViewById(R.id.menuBtn);
+        LinearLayout menu = findViewById(R.id.menu);
+
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (menu.getVisibility() == View.INVISIBLE) {
+                    Animation slideDownAnimation = AnimationUtils.loadAnimation(ticketlist.this, R.anim.menuslidedown);
+                    menu.startAnimation(slideDownAnimation);
+                    menu.setVisibility(View.VISIBLE);
+                } else {
+                    Animation slideUpAnimation = AnimationUtils.loadAnimation(ticketlist.this, R.anim.menuslideup);
+                    menu.startAnimation(slideUpAnimation);
+                    menu.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        LinearLayout homeMenu = findViewById(R.id.homeMenu);
+        LinearLayout ticketMenu = findViewById(R.id.ticketMenu);
+        LinearLayout aboutusMenu = findViewById(R.id.aboutusMenu);
+        LinearLayout logoutMenu = findViewById(R.id.logoutMenu);
+
+        homeMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+
+        ticketMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTicketList();
+            }
+        });
+
+        aboutusMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAboutUs();
+            }
+        });
+
+        logoutMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
+    }
+    public void openHome(){
+        Intent intent = new Intent(this, home.class);
+        startActivity(intent);
     }
 
+    public void openTicketList(){
+        Intent intent = new Intent(this, ticketlist.class);
+        startActivity(intent);
+    }
+
+    public void openAboutUs(){
+        Intent intent = new Intent(this, aboutus.class);
+        startActivity(intent);
+    }
+
+    public void logout(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

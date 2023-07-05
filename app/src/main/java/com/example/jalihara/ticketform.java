@@ -20,6 +20,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RadioButton;
@@ -39,6 +40,9 @@ public class ticketform extends AppCompatActivity {
 //        setContentView(R.layout.activity_ticketform);
         binding = ActivityTicketformBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        TextView usernameLbl = findViewById(R.id.usernameLbl);
+        usernameLbl.setText(Global.username);
 //
         Intent intent = this.getIntent();
         if(intent != null){
@@ -94,124 +98,84 @@ public class ticketform extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                backToHome();
+                openTicketList();
             }
         });
 
 
+        ImageView menuBtn = findViewById(R.id.menuBtn);
+        LinearLayout menu = findViewById(R.id.menu);
 
-//        LinearLayout menu = (LinearLayout) findViewById(R.id.menu);
-//        LinearLayout menutoggle = (LinearLayout) findViewById(R.id.menutoggle);
-//        menuContainerWidth = menu.getWidth();
-//
-//        menutoggle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                menuContainerWidth = menu.getWidth();
-//                if (!isMenuOpen) {
-//                    menu.setVisibility(View.VISIBLE);
-//                    menu.getLayoutParams().width = 0;
-//                    menu.requestLayout();
-//
-//                    ValueAnimator animator = ValueAnimator.ofInt(0, menuContainerWidth);
-//                    animator.setDuration(500);
-//                    animator.setInterpolator(new AccelerateDecelerateInterpolator());
-//                    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//                        @Override
-//                        public void onAnimationUpdate(ValueAnimator animation) {
-//                            int width = (int) animation.getAnimatedValue();
-//                            menu.getLayoutParams().width = width;
-//                            menu.requestLayout();
-//                        }
-//                    });
-//                    animator.start();
-//
-//                    isMenuOpen = true;
-//                } else {
-//                    Toast.makeText(ticketform.this, "Login Succesfull!!", Toast.LENGTH_SHORT).show();
-//                    ValueAnimator animator = ValueAnimator.ofInt(menuContainerWidth, 0);
-//                    animator.setDuration(500);
-//                    animator.setInterpolator(new AccelerateDecelerateInterpolator());
-//                    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//                        @Override
-//                        public void onAnimationUpdate(ValueAnimator animation) {
-//                            int width = (int) animation.getAnimatedValue();
-////                            menu.getLayoutParams().width = width;
-//                            menu.requestLayout();
-//                        }
-//                    });
-//                    animator.addListener(new AnimatorListenerAdapter() {
-//                        @Override
-//                        public void onAnimationEnd(Animator animation) {
-//                            menu.setVisibility(View.INVISIBLE);
-//
-//                        }
-//                    });
-//                    animator.start();
-//                    isMenuOpen = false;
-//                }
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (menu.getVisibility() == View.INVISIBLE) {
+                    Animation slideDownAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslidedown);
+                    menu.startAnimation(slideDownAnimation);
+                    menu.setVisibility(View.VISIBLE);
+                } else {
+                    Animation slideUpAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslideup);
+                    menu.startAnimation(slideUpAnimation);
+                    menu.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
+        LinearLayout homeMenu = findViewById(R.id.homeMenu);
+        LinearLayout ticketMenu = findViewById(R.id.ticketMenu);
+        LinearLayout aboutusMenu = findViewById(R.id.aboutusMenu);
+        LinearLayout logoutMenu = findViewById(R.id.logoutMenu);
 
+        homeMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
 
-//                if (menu.getVisibility() == View.INVISIBLE) {
-//                    // Menu sedang disembunyikan, animasikan slide right untuk menampilkan menu
-////                    Animation slideRightAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslideright);
-////                    Animation slideRightAnimation = new TranslateAnimation(-85,0,0,0);
-////                    slideRightAnimation.setDuration(500);
-////                    menu.startAnimation(slideRightAnimation);
-////                    menu.setVisibility(View.VISIBLE);
-//
-//                    menu.setVisibility(View.VISIBLE);
-//                    menu.getLayoutParams().width = 0;
-//                    menu.requestLayout();
-//
-//                    // Animasikan efek memperluas lebar menu dari 0% hingga 100%
-//                    ValueAnimator animator = ValueAnimator.ofInt(0, menu.getWidth());
-//                    animator.setDuration(500);
-//                    animator.setInterpolator(new AccelerateDecelerateInterpolator());
-//                    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//                        @Override
-//                        public void onAnimationUpdate(ValueAnimator animation) {
-//                            int width = (int) animation.getAnimatedValue();
-//                            menu.getLayoutParams().width = width;
-//                            menu.requestLayout();
-//                        }
-//                    });
-//                    animator.start();
-//                } else {
-//                    // Menu sedang ditampilkan, animasikan slide left untuk menyembunyikan menu
-////                    Animation slideLeftAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslideleft);
-////                    Animation slideLeftAnimation = new TranslateAnimation(15,-menu.getWidth(),0,0);
-////                    slideLeftAnimation.setDuration(500);
-////                    menu.startAnimation(slideLeftAnimation);
-////                    menu.setVisibility(View.INVISIBLE);
-//
-//                    ValueAnimator animator = ValueAnimator.ofInt(menu.getWidth(), 0);
-//                    animator.setDuration(500);
-//                    animator.setInterpolator(new AccelerateDecelerateInterpolator());
-//                    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//                        @Override
-//                        public void onAnimationUpdate(ValueAnimator animation) {
-//                            int width = (int) animation.getAnimatedValue();
-//                            menu.getLayoutParams().width = width;
-//                            menu.requestLayout();
-//
-//                            if (width == 0) {
-//                                menu.setVisibility(View.INVISIBLE);
-//                            }
-//
-//                        }
-//                    });
-//                    animator.start();
-//                    menu.setVisibility(View.INVISIBLE);
-//                }
-//            }
-//        });
+        ticketMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTicketList();
+            }
+        });
 
+        aboutusMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAboutUs();
+            }
+        });
 
+        logoutMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
     }
     public void backToHome(){
         Intent intent = new Intent(this, home.class);
+        startActivity(intent);
+    }
+
+    public void openHome(){
+        Intent intent = new Intent(this, home.class);
+        startActivity(intent);
+    }
+
+    public void openTicketList(){
+        Intent intent = new Intent(this, ticketlist.class);
+        startActivity(intent);
+    }
+
+    public void openAboutUs(){
+        Intent intent = new Intent(this, aboutus.class);
+        startActivity(intent);
+    }
+
+    public void logout(){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

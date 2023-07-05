@@ -7,8 +7,8 @@
 
         <shape android:shape="rectangle">
             <stroke
-                android:width="3dp"
-                android:color="#ffffff"
+                android:width="4dp"
+                android:color="#44265E"
                 android:dashGap="12dp"
                 android:dashWidth="24dp" />
 

@@ -1,219 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/tirai"
-    android:orientation="vertical"
-    tools:context=".home">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        >
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/logojalihara">
-
-        </ImageView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Welcome to Jalihara"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                />
-            <TextView
-                android:id="@+id/usernameLbl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-
-                />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Featured Events"
-        android:fontFamily="@font/poppins_bold"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        android:layout_marginHorizontal="35dp"
-        />
-
-    <ViewFlipper
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:flipInterval="2000"
-        android:autoStart="true"
-        android:inAnimation="@anim/menuslideright"
-        android:outAnimation="@anim/menuslideleft"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginHorizontal="35dp"
-            >
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:src="@drawable/carousel1"
-                android:layout_gravity="center"
-                android:background="@drawable/carouselborder"
-                android:clipToOutline="true"
-                ></ImageView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Best Live Music Tonight"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="#FFFFFF"
-                android:textSize="22dp"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get your ticket to watch fantastic live music"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="#FFFFFF"
-                android:textSize="14dp"
-                ></TextView>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginHorizontal="35dp"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="180dp"
-                android:src="@drawable/carousel2"
-                android:layout_gravity="center"
-                android:background="@drawable/carouselborder"
-                android:clipToOutline="true"
-                ></ImageView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="WannaOne World Tour Jakarta"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="#FFFFFF"
-                android:textSize="21dp"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Don't miss the memorable performance for fans who miss WannaOne"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="#FFFFFF"
-                android:textSize="14dp"
-                ></TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginHorizontal="35dp"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="180dp"
-                android:src="@drawable/carousel3"
-                android:layout_gravity="center"
-                android:background="@drawable/carouselborder"
-                android:clipToOutline="true"
-                ></ImageView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="WorldTour for ARMY"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="#FFFFFF"
-                android:textSize="22dp"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="The best performance from BTS for ARMY"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="#FFFFFF"
-                android:textSize="14dp"
-                ></TextView>
-
-        </LinearLayout>
-    </ViewFlipper>
-
-
-    <RelativeLayout
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/customticketform"
-        android:orientation="horizontal"
-        >
-        <RelativeLayout
+        android:background="@drawable/tirai"
+        android:orientation="vertical"
+        tools:context=".home">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="35dp"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
 
             >
-
-            <TextView
+            <ImageView
+                android:id="@+id/menuBtn"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:src="@drawable/baseline_menu_24"
+                android:layout_marginLeft="35dp"
+                ></ImageView>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Recommendation"
-                android:textColor="@color/primary"
-                android:textSize="24dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="35dp"
                 >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to Jalihara"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="#44265E"
+                    android:textSize="18dp"
+                    />
+                <TextView
+                    android:id="@+id/usernameLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="#44265E"
+                    android:textSize="20dp"
 
-            </TextView>
+                    />
 
-            <TextView
-                android:id="@+id/seeMoreBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="See more"></TextView>
-        </RelativeLayout>
+            </LinearLayout>
 
-        <ListView
-            android:id="@+id/listView"
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/logooutline"
+                />
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginHorizontal="35dp"-->
+        <!--        >-->
+        <!--        <ImageView-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:src="@drawable/logojalihara">-->
+
+        <!--        </ImageView>-->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            >-->
+        <!--            <TextView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Welcome to Jalihara"-->
+        <!--                android:fontFamily="@font/poppins_bold"-->
+        <!--                android:textColor="#FFFFFF"-->
+        <!--                android:textSize="20dp"-->
+        <!--                />-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/usernameLbl"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="User"-->
+        <!--                android:fontFamily="@font/poppins_bold"-->
+        <!--                android:textColor="#FFFFFF"-->
+        <!--                android:textSize="20dp"-->
+
+        <!--                />-->
+
+        <!--        </LinearLayout>-->
+        <!--    </LinearLayout>-->
+
+        <TextView
+            android:id="@+id/Featured"
+            android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            tools:listitem="@layout/items"
-            android:layout_marginTop="60dp"
+            android:text="Featured Events"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
             android:layout_marginHorizontal="35dp"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="10.0sp"/>
+            android:layout_marginTop="30dp"
+            />
+
+        <ViewFlipper
+            android:id="@+id/carousel"
+            android:layout_below="@id/Featured"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:flipInterval="2000"
+            android:autoStart="true"
+            android:inAnimation="@anim/menuslideright"
+            android:outAnimation="@anim/menuslideleft"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="35dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:src="@drawable/carousel1"
+                    android:layout_gravity="center"
+                    android:background="@drawable/carouselborder"
+                    android:clipToOutline="true"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Best Live Music Tonight"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22dp"
+                    ></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Get your ticket to watch fantastic live music"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp"
+                    ></TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="35dp"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/carousel2"
+                    android:layout_gravity="center"
+                    android:background="@drawable/carouselborder"
+                    android:clipToOutline="true"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WannaOne World Tour Jakarta"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21dp"
+                    ></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Don't miss the memorable performance from  WannaOne"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="35dp"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/carousel3"
+                    android:layout_gravity="center"
+                    android:background="@drawable/carouselborder"
+                    android:clipToOutline="true"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WorldTour for ARMY"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22dp"
+                    ></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The best performance from BTS for ARMY"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp"
+                    ></TextView>
+
+            </LinearLayout>
+        </ViewFlipper>
+
+
+        <LinearLayout
+            android:layout_below="@id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/customticketform"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="35dp"
+                android:id="@+id/wrapper1"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Recommendation"
+                    android:textColor="@color/primary"
+                    android:textSize="24dp"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/seeMoreBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="16dp"
+                    android:text="See more"></TextView>
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/items"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="35dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="10.0sp"
+                android:layout_marginBottom="20dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            >
+            <LinearLayout
+                android:id="@+id/homeMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menuborderbottom"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_home"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HOME"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ticketMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menuborderbottom"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_ticket"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TICKET"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/aboutusMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menuborderbottom"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_aboutus"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABOUT US"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/logoutMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C09FDE"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingVertical="14dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/nav_logout"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOG OUT"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#44265E"
+                    android:gravity="center"
+                    ></TextView>
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
-
-
-</LinearLayout>
+</ScrollView>
