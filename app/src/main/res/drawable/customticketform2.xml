@@ -2,7 +2,7 @@
     <!-- Background shape -->
     <item>
         <shape android:shape="rectangle">
-            <corners android:topLeftRadius="30dp" android:topRightRadius="30dp"></corners>
+            <corners android:radius="25dp"></corners>
             <solid android:color="#F2F2F2"/> <!-- Ubah warna latar belakang kotak sesuai kebutuhan -->
         </shape>
     </item>
@@ -11,15 +11,15 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="#D7D7D7"/> <!-- Ubah warna bayangan sesuai kebutuhan -->
-            <corners android:topLeftRadius="30dp" android:topRightRadius="30dp"/> <!-- Sesuaikan radius sudut kotak sesuai kebutuhan -->
+            <corners android:radius="25dp"/> <!-- Sesuaikan radius sudut kotak sesuai kebutuhan -->
         </shape>
     </item>
 
     <!-- Content shape (optional) -->
-    <item android:bottom="0dp" android:left="6dp" android:right="0dp" android:top="6dp">
+    <item android:bottom="0dp" android:left="8dp" android:right="0dp" android:top="8dp">
         <shape android:shape="rectangle">
             <solid android:color="#FFFFFF"/> <!-- Ubah warna isi kotak sesuai kebutuhan -->
-            <corners android:topLeftRadius="30dp" android:topRightRadius="30dp"/> <!-- Sesuaikan radius sudut kotak sesuai kebutuhan -->
+            <corners android:radius="25dp"/> <!-- Sesuaikan radius sudut kotak sesuai kebutuhan -->
         </shape>
     </item>
 </layer-list>

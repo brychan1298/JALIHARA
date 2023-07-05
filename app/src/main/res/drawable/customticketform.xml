@@ -1,59 +1,25 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <!-- Background shape -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#F2F2F2"/>
-            <corners android:radius="25dp"/>
+            <corners android:topLeftRadius="25dp" android:topRightRadius="25dp"></corners>
+            <solid android:color="#F2F2F2"/> <!-- Ubah warna latar belakang kotak sesuai kebutuhan -->
         </shape>
-
     </item>
 
-    <!--  left shadow -->
+    <!-- Inner shadow shape -->
     <item>
         <shape android:shape="rectangle">
-            <gradient
-                android:angle="180"
-                android:centerColor="#00FF0000"
-                android:centerX="0.98"
-                android:endColor="#5C000000"
-                android:startColor="#00FF0000" />
-            <corners android:radius="25dp" />
+            <solid android:color="#D7D7D7"/> <!-- Ubah warna bayangan sesuai kebutuhan -->
+            <corners android:topLeftRadius="25dp" android:topRightRadius="25dp"/> <!-- Sesuaikan radius sudut kotak sesuai kebutuhan -->
         </shape>
     </item>
-    <!--  right shadow -->
-   <!-- <item>
+
+    <!-- Content shape (optional) -->
+    <item android:bottom="0dp" android:left="8dp" android:right="0dp" android:top="8dp">
         <shape android:shape="rectangle">
-            <gradient
-                android:angle="360"
-                android:centerColor="#00FF0000"
-                android:centerX="0.98"
-                android:endColor="#5C000000"
-                android:startColor="#00FF0000" />
-            <corners android:radius="25dp" />
-        </shape>
-    </item>-->
-    <!--  top shadow -->
-    <item>
-        <shape android:shape="rectangle">
-            <gradient
-                android:angle="270"
-                android:centerColor="#D7D7D7"
-                android:centerY="0.01"
-                android:endColor="#00FF0000"
-                android:startColor="#6B000000" />
-            <corners android:radius="25dp" />
+            <solid android:color="#FFFFFF"/> <!-- Ubah warna isi kotak sesuai kebutuhan -->
+            <corners android:topLeftRadius="25dp" android:topRightRadius="25dp"/> <!-- Sesuaikan radius sudut kotak sesuai kebutuhan -->
         </shape>
     </item>
-    <!--  bottom shadow -->
-<!--    <item>-->
-<!--        <shape android:shape="rectangle">-->
-<!--            <gradient-->
-<!--                android:angle="90"-->
-<!--                android:centerColor="#00FF0000"-->
-<!--                android:centerY="0"-->
-<!--                android:endColor="#00FF0000"-->
-<!--                android:startColor="#6B000000" />-->
-<!--            <corners android:radius="25dp" />-->
-<!--        </shape>-->
-<!--    </item>-->
 </layer-list>
