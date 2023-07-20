@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/tirai"
         android:orientation="vertical"
+        android:id="@+id/bodyHome"
         tools:context=".home">
 
         <androidx.appcompat.widget.Toolbar

@@ -9,6 +9,7 @@
         tools:context=".ticketlist"
         android:background="@drawable/tirai"
         android:orientation="vertical"
+        android:id="@+id/bodyTicketList"
         >
 
         <androidx.appcompat.widget.Toolbar

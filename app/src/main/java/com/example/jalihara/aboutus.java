@@ -1,6 +1,7 @@
 package com.example.jalihara;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.WindowCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
@@ -12,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
@@ -73,6 +75,36 @@ public class aboutus extends AppCompatActivity {
                     Animation slideDownAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslidedown);
                     menu.startAnimation(slideDownAnimation);
                     menu.setVisibility(View.VISIBLE);
+
+                    ViewPager2 aboutUsBody = findViewById(R.id.viewPager2);
+                    aboutUsBody.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
+                            menu.startAnimation(slideUpAnimation);
+                            menu.setVisibility(View.INVISIBLE);
+                        }
+                    });
+
+                    Toolbar aboutUsBody2 = findViewById(R.id.toolbar);
+                    aboutUsBody2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
+                            menu.startAnimation(slideUpAnimation);
+                            menu.setVisibility(View.INVISIBLE);
+                        }
+                    });
+
+//                    LinearLayout ticketListBody2 = findViewById(R.id.bodyContactUsFragment);
+//                    ticketListBody2.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
+//                            menu.startAnimation(slideUpAnimation);
+//                            menu.setVisibility(View.INVISIBLE);
+//                        }
+//                    });
                 } else {
                     Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
                     menu.startAnimation(slideUpAnimation);

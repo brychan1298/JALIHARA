@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         tools:context=".AboutUsFragment"
         android:orientation="vertical"
+        android:id="@+id/bodyContactUsFragment"
         >
         <!-- TODO: Update blank fragment layout -->
         <LinearLayout

@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.jalihara.databinding.ActivityHomeBinding;
@@ -86,6 +87,16 @@ public class ticketlist extends AppCompatActivity {
                     Animation slideDownAnimation = AnimationUtils.loadAnimation(ticketlist.this, R.anim.menuslidedown);
                     menu.startAnimation(slideDownAnimation);
                     menu.setVisibility(View.VISIBLE);
+
+                    RelativeLayout ticketListBody = findViewById(R.id.bodyTicketList);
+                    ticketListBody.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Animation slideUpAnimation = AnimationUtils.loadAnimation(ticketlist.this, R.anim.menuslideup);
+                            menu.startAnimation(slideUpAnimation);
+                            menu.setVisibility(View.INVISIBLE);
+                        }
+                    });
                 } else {
                     Animation slideUpAnimation = AnimationUtils.loadAnimation(ticketlist.this, R.anim.menuslideup);
                     menu.startAnimation(slideUpAnimation);

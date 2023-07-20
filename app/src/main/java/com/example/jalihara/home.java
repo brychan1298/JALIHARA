@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.jalihara.databinding.ActivityHomeBinding;
@@ -110,6 +111,16 @@ public class home extends AppCompatActivity {
                     Animation slideDownAnimation = AnimationUtils.loadAnimation(home.this, R.anim.menuslidedown);
                     menu.startAnimation(slideDownAnimation);
                     menu.setVisibility(View.VISIBLE);
+                    RelativeLayout homeBody = findViewById(R.id.bodyHome);
+                    homeBody.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Animation slideUpAnimation = AnimationUtils.loadAnimation(home.this, R.anim.menuslideup);
+                            menu.startAnimation(slideUpAnimation);
+                            menu.setVisibility(View.INVISIBLE);
+                        }
+                    });
+
                 } else {
                     Animation slideUpAnimation = AnimationUtils.loadAnimation(home.this, R.anim.menuslideup);
                     menu.startAnimation(slideUpAnimation);
@@ -117,6 +128,9 @@ public class home extends AppCompatActivity {
                 }
             }
         });
+
+
+
 
         LinearLayout homeMenu = findViewById(R.id.homeMenu);
         LinearLayout ticketMenu = findViewById(R.id.ticketMenu);

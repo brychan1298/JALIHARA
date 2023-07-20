@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -113,6 +114,16 @@ public class ticketform extends AppCompatActivity {
                     Animation slideDownAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslidedown);
                     menu.startAnimation(slideDownAnimation);
                     menu.setVisibility(View.VISIBLE);
+
+                    RelativeLayout ticketFormBody = findViewById(R.id.bodyTicketForm);
+                    ticketFormBody.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Animation slideUpAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslideup);
+                            menu.startAnimation(slideUpAnimation);
+                            menu.setVisibility(View.INVISIBLE);
+                        }
+                    });
                 } else {
                     Animation slideUpAnimation = AnimationUtils.loadAnimation(ticketform.this, R.anim.menuslideup);
                     menu.startAnimation(slideUpAnimation);
