@@ -2,11 +2,16 @@ package com.example.jalihara;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +65,24 @@ public class AboutUsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_about_us, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        LinearLayout menu = getActivity().findViewById(R.id.menu);
+        LinearLayout bodyAboutUs = getView().findViewById(R.id.bodyAboutUsFragment);
+
+        bodyAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (menu.getVisibility() == View.VISIBLE) {
+                    Animation slideUpAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.menuslideup);
+                    menu.startAnimation(slideUpAnimation);
+                    menu.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 }

@@ -80,6 +80,7 @@
         android:layout_below="@id/usernameTxt"
         android:layout_marginHorizontal="50dp"
         android:visibility="invisible"
+        android:textStyle="italic"
         android:textSize="14dp"
         android:textColor="#FF0000"
         android:text="TextView" />
@@ -91,6 +92,7 @@
         android:layout_below="@id/passwordTxt"
         android:layout_marginHorizontal="50dp"
         android:visibility="invisible"
+        android:textStyle="italic"
         android:textSize="14dp"
         android:textColor="#FF0000"
         android:text="TextView" />

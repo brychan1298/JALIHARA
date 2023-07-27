@@ -15,12 +15,12 @@
         <RelativeLayout
             android:id="@+id/itemImage"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="190dp"
             android:background="@drawable/ticket1"
             >
             <RelativeLayout
                 android:id="@+id/group1"
-                android:layout_width="250dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_alignParentLeft="true"
@@ -31,12 +31,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginVertical="30dp"
+                    android:layout_marginVertical="55dp"
                     android:fontFamily="@font/teko_light"
                     android:gravity="center"
+                    android:scaleX="1.4"
+                    android:scaleY="1.5"
                     android:text="INDO IN TECHNO"
                     android:textColor="@color/white"
-                    android:textSize="50dp"
+                    android:textSize="35dp"
                     android:textStyle="bold" />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -47,26 +49,27 @@
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="15dp"
                     >
+
                     <TextView
                         android:id="@+id/itemDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
                         android:fontFamily="@font/teko_light"
-                        android:textSize="25dp"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"
                         android:text="22-FEB-23"
-                        android:layout_marginRight="15dp">
+                        android:textColor="#FFFFFF"
+                        android:textSize="24dp"
+                        android:textStyle="bold">
 
                     </TextView>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/teko_light"
-                        android:textSize="25dp"
+                        android:textSize="20dp"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
-                        android:layout_marginRight="7dp"
+                        android:layout_marginRight="8dp"
                         android:text="|"></TextView>
 
                     <TextView
@@ -74,22 +77,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/teko_light"
-                        android:textSize="25dp"
+                        android:textSize="24dp"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:text="10:30 AM"></TextView>
+
                     <TextView
                         android:id="@+id/itemPrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/teko_light"
-                        android:textSize="25dp"
+                        android:textSize="24dp"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:text="$10.00"
                         android:gravity="right"
                         android:layout_gravity="right"
+                        android:layout_marginRight="0dp"
                         />
+
                 </LinearLayout>
             </RelativeLayout>
             <LinearLayout
@@ -107,7 +113,7 @@
                     ></ImageView>
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp"
+                    android:layout_height="160dp"
                     android:background="@drawable/verticaldotted"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -127,16 +133,15 @@
                 >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="180dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
                     android:layout_gravity="center"
-                    android:gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
                     android:rotation="270"
+                    android:gravity="center"
                     android:text="BUY"
                     android:textColor="#FFFFFF"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="20dp"
-                    />
+                    android:textSize="24dp" />
             </LinearLayout>
 
         </RelativeLayout>

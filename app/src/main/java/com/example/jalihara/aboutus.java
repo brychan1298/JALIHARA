@@ -86,18 +86,8 @@ public class aboutus extends AppCompatActivity {
                         }
                     });
 
-                    Toolbar aboutUsBody2 = findViewById(R.id.toolbar);
-                    aboutUsBody2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
-                            menu.startAnimation(slideUpAnimation);
-                            menu.setVisibility(View.INVISIBLE);
-                        }
-                    });
-
-//                    LinearLayout ticketListBody2 = findViewById(R.id.bodyContactUsFragment);
-//                    ticketListBody2.setOnClickListener(new View.OnClickListener() {
+//                    Toolbar aboutUsBody2 = findViewById(R.id.toolbar);
+//                    aboutUsBody2.setOnClickListener(new View.OnClickListener() {
 //                        @Override
 //                        public void onClick(View view) {
 //                            Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
@@ -105,6 +95,7 @@ public class aboutus extends AppCompatActivity {
 //                            menu.setVisibility(View.INVISIBLE);
 //                        }
 //                    });
+
                 } else {
                     Animation slideUpAnimation = AnimationUtils.loadAnimation(aboutus.this, R.anim.menuslideup);
                     menu.startAnimation(slideUpAnimation);

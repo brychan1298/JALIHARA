@@ -36,11 +36,11 @@ public class ticketlist extends AppCompatActivity {
         TextView usernameLbl = findViewById(R.id.usernameLbl);
         usernameLbl.setText(Global.username);
 
-        int[] imageList = {R.drawable.ticket1, R.drawable.ticket2, R.drawable.ticket3, R.drawable.ticket4, R.drawable.ticket5};
-        String[] nameList = {"INDO IN TECHNO", "KING OF GUITAR", "JOHN DOE", "SWIFTIES", "DRUM ROLL"};
-        String[] dateList = {"22-Feb-23", "12-Sept-23", "20-July-23", "02-Oct-23", "02-June-23"};
-        String[] timeList = {"10:30 AM", "09:00 AM", "12:45 PM", "07:00 PM", "10:00 AM"};
-        String[] priceList = {"$6.50", "$10.00", "$12.05", "$4.75", "$10.00"};
+        int[] imageList = {R.drawable.ticket1, R.drawable.ticket2, R.drawable.ticket3, R.drawable.ticket4, R.drawable.ticket5, R.drawable.ticket6, R.drawable.ticket7};
+        String[] nameList = {"INDO IN TECHNO", "KING OF GUITAR", "WAYANG GOLEK", "SWIFTIES", "OPERA IN UR AREA", "DRUM ROLL", "CIRCUS FOR US"};
+        String[] dateList = {"22-Feb-23", "16-Sept-23", "20-Jan-23", "02-Oct-23", "01-April-23", "12-Jul-23", "22-Oct-23"};
+        String[] timeList = {"10:30 AM", "09:00 AM", "12:45 PM", "07:00 PM", "10:00 AM", "07:00 PM", "07:30 PM"};
+        String[] priceList = {"$6.50", "$10.00", "$12.05", "$4.75", "$10.00", "$8.00", "$15.00"};
 
         for(int i = 0; i < imageList.length; i++){
             listItem = new ListItem(nameList[i], dateList[i], timeList[i], priceList[i], imageList[i]);
