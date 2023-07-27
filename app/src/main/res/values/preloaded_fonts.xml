@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/noto_sans_bold</item>
         <item>@font/poppins</item>
         <item>@font/poppins_bold</item>
         <item>@font/poppins_semibold</item>
         <item>@font/poppins_thin</item>
         <item>@font/sarpanch_bold</item>
-        <item>@font/teko_light</item>
+        <!--        <item>@font/teko_light</item>-->
     </array>
 </resources>
