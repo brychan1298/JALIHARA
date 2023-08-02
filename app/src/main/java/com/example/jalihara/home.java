@@ -46,8 +46,8 @@ public class home extends AppCompatActivity {
 //        }
 
         int[] imageList = {R.drawable.ticket1, R.drawable.ticket2, R.drawable.ticket3};
-        String[] nameList = {"INDO IN TECHNO", "KING OF GUITAR", "JOHN DOE"};
-        String[] dateList = {"22-Feb-23", "12-Sept-23", "20-July-23"};
+        String[] nameList = {"INDO IN TECHNO", "KING OF GUITAR", "WAYANG GOLEK"};
+        String[] dateList = {"22-Feb-23", "16-Sept-23", "20-Jan-23"};
         String[] timeList = {"10:30 AM", "09:00 AM", "12:45 PM"};
         String[] priceList = {"$6.50", "$10.00", "$12.05"};
 

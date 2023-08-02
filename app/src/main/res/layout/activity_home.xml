@@ -87,23 +87,19 @@
             android:autoStart="true"
             android:focusableInTouchMode="true"
             android:inAnimation="@anim/menuslideright"
-            android:outAnimation="@anim/menuslideleft"
-            >
+            android:outAnimation="@anim/menuslideleft">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginHorizontal="35dp"
-                >
-
+                android:layout_marginHorizontal="35dp">
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:src="@drawable/carousel1"
                     android:layout_gravity="center"
                     android:background="@drawable/carouselborder"
-                    android:clipToOutline="true"
-                    ></ImageView>
+                    android:clipToOutline="true"></ImageView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,83 +107,70 @@
                     android:fontFamily="@font/poppins_bold"
                     android:textStyle="bold"
                     android:textColor="#FFFFFF"
-                    android:textSize="22dp"
-                    ></TextView>
+                    android:textSize="22dp"></TextView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Get your ticket to watch fantastic live music"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="#FFFFFF"
-                    android:textSize="12dp"
-                    ></TextView>
+                    android:textSize="12dp"></TextView>
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginHorizontal="35dp"
-                >
+                android:layout_marginHorizontal="35dp">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="180dp"
                     android:src="@drawable/carousel2"
                     android:layout_gravity="center"
                     android:background="@drawable/carouselborder"
-                    android:clipToOutline="true"
-                    ></ImageView>
+                    android:clipToOutline="true"></ImageView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="WannaOne World Tour Jakarta"
                     android:fontFamily="@font/poppins_bold"
                     android:textColor="#FFFFFF"
-                    android:textSize="21dp"
-                    ></TextView>
+                    android:textSize="21dp"></TextView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Don't miss the memorable performance from  WannaOne"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="#FFFFFF"
-                    android:textSize="12dp"
-                    ></TextView>
-
+                    android:textSize="12dp"></TextView>
             </LinearLayout>
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginHorizontal="35dp"
-                >
+                android:layout_marginHorizontal="35dp">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="180dp"
                     android:src="@drawable/carousel3"
                     android:layout_gravity="center"
                     android:background="@drawable/carouselborder"
-                    android:clipToOutline="true"
-                    ></ImageView>
+                    android:clipToOutline="true" ></ImageView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="WorldTour for ARMY"
                     android:fontFamily="@font/poppins_bold"
                     android:textColor="#FFFFFF"
-                    android:textSize="22dp"
-                    ></TextView>
+                    android:textSize="22dp"></TextView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The best performance from BTS for ARMY"
                     android:fontFamily="@font/poppins_semibold"
                     android:textColor="#FFFFFF"
-                    android:textSize="12dp"
-                    ></TextView>
-
+                    android:textSize="12dp"></TextView>
             </LinearLayout>
         </ViewFlipper>
 
@@ -196,7 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="@drawable/customticketform"
+            android:background="@drawable/customticketlist"
             android:orientation="vertical"
             android:paddingBottom="30dp"
             >
@@ -213,10 +196,10 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="Recommendation"
-                    android:textColor="@color/primary"
+                    android:text="Recommendation Events"
+                    android:textColor="@android:color/white"
                     android:textStyle="bold"
-                    android:textSize="24dp"
+                    android:textSize="18dp"
                     >
 
                 </TextView>
@@ -229,6 +212,8 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/poppins_semibold"
                     android:textSize="16dp"
+                    android:textColor="#C09FDE"
+                    android:layout_marginTop="30dp"
                     android:text="See more"></TextView>
             </RelativeLayout>
 
